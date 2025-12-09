@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import styled from 'styled-components';
 import { Search } from 'react-feather';
 import toast from 'react-hot-toast';
 import { getAxiosWithToken } from '../../services/api';
@@ -7,94 +6,20 @@ import InputField from '../../components/InputField';
 import GradientButton from '../../components/GradientButton';
 import Logo from '../../components/Logo';
 import Sidebar from '../../components/Sidebar';
-
-const ConsultaContainer = styled.div`
-  min-height: 100vh;
-  background-color: ${props => props.theme.colors.backgroundLight};
-  padding-left: 0;
-
-  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
-    padding-left: 250px;
-  }
-`;
-
-const Header = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: ${props => props.theme.spacing.xl} ${props => props.theme.spacing.lg};
-  background-color: ${props => props.theme.colors.background};
-`;
-
-const Title = styled.h1`
-  font-weight: bold;
-  color: ${props => props.theme.colors.text};
-  font-size: 28px;
-  margin-top: ${props => props.theme.spacing.sm};
-`;
-
-const Content = styled.div`
-  padding: ${props => props.theme.spacing.lg};
-  max-width: 800px;
-  margin: 0 auto;
-`;
-
-const SearchSection = styled.div`
-  background-color: ${props => props.theme.colors.cardBackground};
-  border-radius: ${props => props.theme.borderRadius.small};
-  padding: ${props => props.theme.spacing.lg};
-  margin-bottom: ${props => props.theme.spacing.lg};
-`;
-
-const SectionTitle = styled.h2`
-  color: ${props => props.theme.colors.text};
-  font-size: 20px;
-  margin-bottom: ${props => props.theme.spacing.md};
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: ${props => props.theme.spacing.md};
-`;
-
-const ResultsContainer = styled.div`
-  background-color: ${props => props.theme.colors.cardBackground};
-  border-radius: ${props => props.theme.borderRadius.small};
-  padding: ${props => props.theme.spacing.lg};
-  margin-bottom: ${props => props.theme.spacing.lg};
-`;
-
-const ResultCard = styled.div`
-  background-color: ${props => props.theme.colors.background};
-  border-radius: ${props => props.theme.borderRadius.small};
-  padding: ${props => props.theme.spacing.md};
-  margin-bottom: ${props => props.theme.spacing.sm};
-  border-left: 4px solid ${props => props.theme.colors.primary};
-`;
-
-const ResultItem = styled.p`
-  color: ${props => props.theme.colors.text};
-  font-size: 16px;
-  margin: ${props => props.theme.spacing.xs} 0;
-  
-  strong {
-    color: ${props => props.theme.colors.primary};
-  }
-`;
-
-const Divider = styled.div`
-  height: 1px;
-  background-color: ${props => props.theme.colors.primaryLight};
-  margin: ${props => props.theme.spacing.lg} 0;
-`;
-
-const EmptyState = styled.div`
-  text-align: center;
-  color: ${props => props.theme.colors.textSecondary};
-  padding: ${props => props.theme.spacing.xl};
-  font-size: 16px;
-`;
+import {
+  ConsultaContainer,
+  Header,
+  Title,
+  Content,
+  SearchSection,
+  SectionTitle,
+  ButtonContainer,
+  ResultsContainer,
+  ResultCard,
+  ResultItem,
+  Divider,
+  EmptyState,
+} from './style';
 
 export default function Consulta() {
   const [id, setId] = useState('');

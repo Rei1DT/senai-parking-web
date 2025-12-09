@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 import { Truck } from 'react-feather';
 import toast from 'react-hot-toast';
 import { getAxiosWithToken } from '../../services/api';
@@ -8,50 +7,13 @@ import InputField from '../../components/InputField';
 import GradientButton from '../../components/GradientButton';
 import Logo from '../../components/Logo';
 import Sidebar from '../../components/Sidebar';
-
-const EntranceContainer = styled.div`
-  min-height: 100vh;
-  background-color: ${props => props.theme.colors.background};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: ${props => props.theme.spacing.lg};
-  padding-left: ${props => props.theme.spacing.lg};
-
-  @media (min-width: ${props => props.theme.breakpoints.tablet}) {
-    padding-left: 270px;
-  }
-`;
-
-const BoxTop = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: ${props => props.theme.spacing.lg};
-`;
-
-const EntranceTitle = styled.h1`
-  font-weight: bold;
-  color: ${props => props.theme.colors.text};
-  font-size: 28px;
-`;
-
-const BoxMid = styled.div`
-  width: 100%;
-  max-width: 500px;
-  margin-bottom: ${props => props.theme.spacing.lg};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const BoxBottom = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: ${props => props.theme.spacing.lg};
-`;
+import {
+  EntranceContainer,
+  BoxTop,
+  EntranceTitle,
+  BoxMid,
+  BoxBottom,
+} from './style';
 
 export default function Entrada() {
   const navigate = useNavigate();

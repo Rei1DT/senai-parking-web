@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import logoImage from '../assets/images/logo.png';
 
 const LogoImage = styled.img`
   width: 35vw;
@@ -8,7 +9,7 @@ const LogoImage = styled.img`
 `;
 
 function Logo({ ...props }) {
-  return <LogoImage src="/logo.png" alt="Senai Parking Logo" {...props} />;
+  return <LogoImage src={logoImage} alt="Senai Parking Logo" {...props} />;
 }
 
 export default Logo;

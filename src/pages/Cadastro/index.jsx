@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 import { User, Mail, Eye } from 'react-feather';
 import axios from 'axios';
 import toast from 'react-hot-toast';
@@ -8,45 +7,13 @@ import { API_BASE_URL } from '../../services/api';
 import InputField from '../../components/InputField';
 import GradientButton from '../../components/GradientButton';
 import Logo from '../../components/Logo';
-
-const SignUpContainer = styled.div`
-  min-height: 100vh;
-  background-color: ${props => props.theme.colors.background};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: ${props => props.theme.spacing.lg};
-`;
-
-const BoxTop = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: ${props => props.theme.spacing.lg};
-`;
-
-const SignUpTitle = styled.h1`
-  font-weight: bold;
-  color: ${props => props.theme.colors.text};
-  font-size: 28px;
-`;
-
-const BoxMid = styled.div`
-  width: 100%;
-  max-width: 500px;
-  margin-bottom: ${props => props.theme.spacing.lg};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const BoxBottom = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: ${props => props.theme.spacing.lg};
-`;
+import {
+  SignUpContainer,
+  BoxTop,
+  SignUpTitle,
+  BoxMid,
+  BoxBottom,
+} from './style';
 
 export default function Cadastro() {
   const navigate = useNavigate();
